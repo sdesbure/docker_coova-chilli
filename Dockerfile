@@ -9,7 +9,10 @@ RUN apk add --update coova-chilli
 # clean 
 RUN rm -rf /var/cache/apk/*
 
+USER chilli
+
+COPY chilli.conf /etc/chilli.conf
+
 VOLUME /config
 
 ENTRYPOINT ["/usr/sbin/chilli"]
-CMD ["-conf", "/config/chilli.conf"]
