@@ -1,9 +1,6 @@
 FROM ubuntu:15.04
 MAINTAINER Sylvain Desbureaux <sylvain@desbureaux.fr>
 
-ENV http_proxy http://l-at9696.rd.francetelecom.fr:80/
-ENV https_proxy http://l-at9696.rd.francetelecom.fr:80/
-
 RUN apt-get update && apt-get install -y \
   git \
   build-essential \
