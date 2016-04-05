@@ -4,7 +4,6 @@ MAINTAINER Sylvain Desbureaux <sylvain@desbureaux.fr>
 ENV http_proxy http://l-at9696.rd.francetelecom.fr:80/
 ENV https_proxy http://l-at9696.rd.francetelecom.fr:80/
 
-# install packages
 RUN apt-get update && apt-get install -y \
   git \
   build-essential \
@@ -43,6 +42,10 @@ COPY local.conf /etc/chilli/
 COPY main.conf /etc/chilli/
 
 EXPOSE 3990 4990
+
+USER chilli
+
+COPY chilli.conf /etc/chilli.conf
 
 VOLUME /config
 
